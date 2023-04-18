@@ -12,9 +12,15 @@ for(var i=0;i<a.length;i++)
 var b=document.getElementsByTagName("li");
 b[4].textContent='Fifth item';
 
-var c=document.querySelector('.list-group-item:nth-child(2)');
-c.style.backgroundColor="green";
+// var c=document.querySelector('.list-group-item:nth-child(2)');
+// c.style.backgroundColor="green";
 
-var d=document.querySelector('.list-group-item:nth-child(3)');
-d.style.display='none';
+// var d=document.querySelector('.list-group-item:nth-child(3)');
+// d.style.display='none';
 
+var e=document.querySelectorAll('.list-group-item');
+e[1].style.color="green";
+for(let i=0;i<e.length;i=i+2)
+{
+e[i].style.backgroundColor="green";
+}
