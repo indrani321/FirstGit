@@ -12,3 +12,9 @@ for(var i=0;i<a.length;i++)
 var b=document.getElementsByTagName("li");
 b[4].textContent='Fifth item';
 
+var c=document.querySelector('.list-group-item:nth-child(2)');
+c.style.backgroundColor="green";
+
+var d=document.querySelector('.list-group-item:nth-child(3)');
+d.style.display='none';
+
