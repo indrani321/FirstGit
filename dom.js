@@ -9,4 +9,6 @@ for(var i=0;i<a.length;i++)
 {
     a[i].style.fontWeight='bold';
 }
+var b=document.getElementsByTagName("li");
+b[4].textContent='Fifth item';
 
