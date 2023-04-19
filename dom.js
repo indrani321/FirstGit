@@ -24,3 +24,22 @@ for(let i=0;i<e.length;i=i+2)
 {
 e[i].style.backgroundColor="green";
 }
+//Create a div
+var newdiv= document.createElement('div')
+//create text node
+var newdivtext=document.createTextNode('Hello world');
+//add test to div
+newdiv.appendChild(newdivtext);
+var container= document.querySelector('header .container')
+var h1= document.querySelector('header h1')
+container.insertBefore(newdiv,h1);
+
+
+var list=document.createElement('li')
+console.log(list)
+//create text node
+var listtext=document.createTextNode('hello world');
+list.appendChild(listtext);
+
+var insert= document.querySelector('#items li:first-child');
+insert.before(list);
