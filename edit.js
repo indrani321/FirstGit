@@ -15,6 +15,9 @@ filter.addEventListener('keyup', filterItems);
 function addItem(e){
   e.preventDefault();
 
+  //get the name and description of new item from the input fields
+  const dname=document.getElementById('description').value
+
   // Get input value
   const newItem = document.getElementById('item').value;
 
@@ -26,6 +29,7 @@ function addItem(e){
 
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(dname));
 
   // Create delete button element
   const deleteBtn = document.createElement('button');
@@ -45,7 +49,8 @@ function addItem(e){
   // Create edit button element
   const editButton = document.createElement('button');
   editButton.textContent = 'Edit';
-  editButton.className = "btn btn-warning btn-sm float-center";
+  editButton.className = "btn btn-warning btn-sm float-right";
+
 
   // Add a click event listener to the edit button
   editButton.addEventListener('click', () => {
@@ -76,11 +81,15 @@ function filterItems(e){
 
   // Convert to an array
   Array.from(items).forEach(item => {
-    const itemName = item.firstChild.textContent.toLowerCase();
-
-    if(itemName.indexOf(text) !== -1){
+    const itemName = item.firstChild.textContent;
+    const descName = item.firstChild.nextSibling.textContent;
+    
+    if(itemName.toLowerCase().indexOf(text) !== -1 ||descName.toLowerCase().indexOf(text) !== -1){
       item.style.display = 'block';
-    } else {
+    }
+    
+    
+    else  {
       item.style.display = 'none';
     }
   });
